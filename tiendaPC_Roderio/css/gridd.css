@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+
+.grid{
+	width:99%;
+	display: grid;
+}
+
+/*Definimos nuestro templates por filas y columnas -- 2 cols - 3 rows -- gap */
+.grid-template-columns-row{
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 200px 400px 100px;
+	/*column-gap: 20px;
+	row-gap: 10px;*/
+	gap: 10px;
+}
+
+
+/*Definimos nuestro templates por áreas --- 3 cols - 3 rows - areas*/
+.template-areas{
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 100px 500px 50px;
+	grid-template-areas: 
+	"botonera botonera botonera" 
+	"centro centro links" 
+	"centro centro pie";
+	}
+
+#botonera{
+	grid-area: botonera;
+}
+
+#centro{
+	grid-area: centro;
+}
+
+#links-interes{
+	grid-area: links;
+}
+
+#pie{
+	grid-area: pie;
+}
+
+/*Posición de los elementos */
+.justify-items{
+	justify-items: center;
+}
+
+.align-items{
+	align-items: center;
+}
+
+/*Posición del contenido */
+/*3 cols de 300px --- height 500px */
+.justify-content{
+	grid-template-columns: repeat(3, 300px);
+	grid-template-rows: auto;
+	height: 500px;
+	justify-content: space-between;
+}
+
+.align-content{
+	align-content: space-around;
+}
+
+.justify-content div{
+	padding: 20px;
+	text-align: center;
+}
+
+/* definimos 3 cols de 200px -- height del contenedor en 500px*/
+.column-row-start-end{
+	grid-template-columns: repeat(3, 200px);
+	grid-template-rows: auto;
+	height: 500px;
+}
+
+/* definimos inicio y fin de row y start de una celda*/
+.column-row-start-end-item{
+/*	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 3;*/
+	grid-column: 1/3;
+	grid-row: 1/3;
+}
